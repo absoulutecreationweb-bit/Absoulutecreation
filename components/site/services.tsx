@@ -1,53 +1,34 @@
 'use client'
 
-import {
-  Sofa,
-  Hammer,
-  Compass,
-  Building2,
-  Paintbrush,
-  ClipboardList,
-  KeyRound,
-  ArrowUpRight,
-} from 'lucide-react'
+import { Building2, PanelsTopLeft, Sparkles, PartyPopper, ArrowUpRight } from 'lucide-react'
+import Image from 'next/image'
 import { SectionHeading } from './section-heading'
 import { StaggerGroup, StaggerItem } from './reveal'
 
 const services = [
   {
-    icon: Sofa,
-    title: 'Interior Design',
-    desc: 'Bespoke interiors that balance beauty, function and atmosphere for every space.',
-  },
-  {
-    icon: Hammer,
-    title: 'Fit-Out Solutions',
-    desc: 'Full-scope commercial and residential fit-outs delivered to exacting standards.',
-  },
-  {
-    icon: Compass,
-    title: 'Architecture',
-    desc: 'Considered architectural design rooted in context, light and enduring form.',
+    icon: PanelsTopLeft,
+    title: 'Exhibition & Kiosks',
+    desc: 'Immersive brand spaces and visitor experiences designed to captivate and convert.',
+    image: '/new/8.jpeg',
   },
   {
     icon: Building2,
-    title: 'Construction',
-    desc: 'Precision-led construction management from foundation to finishing.',
+    title: 'Interior & Fit-Out',
+    desc: 'Elegant interior environments and full fit-out delivery with lasting material impact.',
+    image: '/new/9.jpeg',
   },
   {
-    icon: Paintbrush,
-    title: 'Renovation',
-    desc: 'Reimagining existing spaces with sensitivity, craft and modern luxury.',
+    icon: Sparkles,
+    title: 'Sculpture & Theming',
+    desc: 'Detailed sculptural elements and thematic installations that bring character to life.',
+    image: '/new/10.jpeg',
   },
   {
-    icon: ClipboardList,
-    title: 'Project Management',
-    desc: 'Seamless coordination that keeps every milestone on time and on budget.',
-  },
-  {
-    icon: KeyRound,
-    title: 'Turnkey Solutions',
-    desc: 'One partner, complete delivery — ready to occupy and impeccably finished.',
+    icon: PartyPopper,
+    title: 'Events & Activations',
+    desc: 'Refined event environments and activations crafted for memorable, high-touch moments.',
+    image: '/new/11.jpeg',
   },
 ]
 
@@ -56,54 +37,34 @@ export function Services() {
     <section id="services" className="bg-secondary py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-end">
-          <SectionHeading
-            eyebrow="What We Do"
-            title="A complete spectrum of design & build expertise."
-          />
+          <SectionHeading eyebrow="What We Do" title="Premium environments crafted with precision and impact." />
           <p className="max-w-sm text-pretty text-sm leading-relaxed text-muted-foreground">
-            Every discipline under one roof — so your vision moves from first concept to final
-            handover without compromise.
+            From concept and design through fabrication, production and installation, we deliver
+            distinctive environments for exhibitions, interiors and brand experiences.
           </p>
         </div>
 
-        <StaggerGroup className="mt-16 grid gap-px overflow-hidden rounded-sm border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
+        <StaggerGroup className="mt-16 grid gap-6 lg:grid-cols-2">
           {services.map((s) => (
             <StaggerItem key={s.title}>
-              <article className="group relative flex h-full flex-col justify-between gap-10 bg-background p-8 transition-colors duration-500 hover:bg-primary md:p-10">
-                <div className="flex items-start justify-between">
-                  <span className="flex size-14 items-center justify-center rounded-sm bg-secondary text-foreground transition-colors duration-500 group-hover:bg-gold group-hover:text-gold-foreground">
+              <article className="group relative flex h-full flex-col justify-between gap-10 overflow-hidden rounded-[1.75rem] border border-border/70 bg-background/85 p-8 backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 hover:border-gold/50 hover:shadow-[0_20px_60px_rgba(17,17,17,0.08)] md:p-10">
+                <div className="absolute inset-0">
+                  <Image src={s.image} alt={s.title} fill sizes="(max-width: 768px) 100vw, 50vw" loading="lazy" className="object-cover opacity-0 transition duration-700 group-hover:opacity-20" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/70 to-background/40" />
+                </div>
+                <div className="relative z-10 flex items-start justify-between">
+                  <span className="flex size-14 items-center justify-center rounded-[1rem] bg-secondary text-foreground transition-colors duration-500 group-hover:bg-gold group-hover:text-gold-foreground">
                     <s.icon className="size-6" strokeWidth={1.5} />
                   </span>
-                  <ArrowUpRight className="size-6 text-muted-foreground opacity-0 transition-all duration-500 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:opacity-100 group-hover:text-primary-foreground" />
+                  <ArrowUpRight className="size-6 text-muted-foreground opacity-0 transition-all duration-500 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:opacity-100" />
                 </div>
-                <div>
-                  <h3 className="font-serif text-2xl font-medium text-foreground transition-colors duration-500 group-hover:text-primary-foreground">
-                    {s.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground transition-colors duration-500 group-hover:text-primary-foreground/70">
-                    {s.desc}
-                  </p>
+                <div className="relative z-10">
+                  <h3 className="font-serif text-2xl font-medium text-foreground">{s.title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
                 </div>
               </article>
             </StaggerItem>
           ))}
-          <StaggerItem>
-            <article className="flex h-full flex-col justify-between gap-10 bg-gold p-8 text-gold-foreground md:p-10">
-              <span className="text-xs font-semibold uppercase tracking-[0.25em]">
-                Let&apos;s collaborate
-              </span>
-              <div>
-                <h3 className="font-serif text-2xl font-medium">Have a project in mind?</h3>
-                <a
-                  href="#contact"
-                  className="mt-4 inline-flex items-center gap-2 text-sm font-medium underline underline-offset-4"
-                >
-                  Get in touch
-                  <ArrowUpRight className="size-4" />
-                </a>
-              </div>
-            </article>
-          </StaggerItem>
         </StaggerGroup>
       </div>
     </section>

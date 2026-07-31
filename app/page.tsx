@@ -4,6 +4,7 @@ import { About } from '@/components/site/about'
 import { Services } from '@/components/site/services'
 import { Projects } from '@/components/site/projects'
 import { WhyChooseUs } from '@/components/site/why-choose-us'
+import { CoreValues } from '@/components/site/core-values'
 import { Stats } from '@/components/site/stats'
 import { Testimonials } from '@/components/site/testimonials'
 import { Process } from '@/components/site/process'
@@ -24,6 +25,7 @@ export default function Page() {
         <Hero />
         <About />
         <Services />
+        <CoreValues />
         <Projects />
         <WhyChooseUs />
         <Stats />

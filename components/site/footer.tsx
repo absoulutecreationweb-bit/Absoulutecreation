@@ -37,26 +37,24 @@ const columns = [
     links: [
       { label: 'About Us', href: '#about' },
       { label: 'Our Process', href: '#process' },
-      { label: 'Careers', href: '#' },
       { label: 'Contact', href: '#contact' },
     ],
   },
   {
     title: 'Services',
     links: [
-      { label: 'Interior Design', href: '#services' },
-      { label: 'Fit-Out Solutions', href: '#services' },
-      { label: 'Architecture', href: '#services' },
-      { label: 'Turnkey Solutions', href: '#services' },
+      { label: 'Exhibition & Kiosks', href: '#services' },
+      { label: 'Interior & Fit-Out', href: '#services' },
+      { label: 'Sculpture & Theming', href: '#services' },
+      { label: 'Events & Activations', href: '#services' },
     ],
   },
   {
     title: 'Projects',
     links: [
-      { label: 'Residential', href: '#projects' },
-      { label: 'Commercial', href: '#projects' },
-      { label: 'Hospitality', href: '#projects' },
-      { label: 'Corporate', href: '#projects' },
+      { label: 'Portfolio', href: '#projects' },
+      { label: 'Client Collaborations', href: '#brands' },
+      { label: 'Contact', href: '#contact' },
     ],
   },
 ]
@@ -78,43 +76,20 @@ export function Footer() {
           <div className="max-w-sm">
             <a href="#top" className="flex flex-col leading-none" aria-label="Absolute Creation">
               <span className="font-serif text-2xl font-medium tracking-tight">Absolute</span>
-              <span className="text-[0.65rem] font-semibold uppercase tracking-[0.4em] text-gold">
-                Creation
-              </span>
+              <span className="text-[0.65rem] font-semibold uppercase tracking-[0.4em] text-gold">Creation</span>
             </a>
             <p className="mt-6 text-sm leading-relaxed text-primary-foreground/60">
-              A world-class design and construction house crafting extraordinary residential and
-              commercial spaces across the globe.
+              Absolute Creation shapes immersive interiors and exhibitions that balance artistic vision with disciplined execution.
             </p>
 
-            <form
-              onSubmit={(e) => {
-                e.preventDefault()
-                setSubscribed(true)
-              }}
-              className="mt-8"
-            >
-              <label htmlFor="newsletter" className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-foreground/60">
-                Newsletter
-              </label>
+            <form onSubmit={(e) => { e.preventDefault(); setSubscribed(true) }} className="mt-8">
+              <label htmlFor="newsletter" className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-foreground/60">Newsletter</label>
               {subscribed ? (
                 <p className="mt-3 text-sm text-gold">Thank you for subscribing.</p>
               ) : (
                 <div className="mt-3 flex items-center border-b border-primary-foreground/25 focus-within:border-gold">
-                  <input
-                    id="newsletter"
-                    type="email"
-                    required
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Your email address"
-                    className="h-11 flex-1 bg-transparent text-sm outline-none placeholder:text-primary-foreground/40"
-                  />
-                  <button
-                    type="submit"
-                    aria-label="Subscribe"
-                    className="flex size-9 items-center justify-center text-gold transition-transform hover:translate-x-1"
-                  >
+                  <input id="newsletter" type="email" required value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Your email address" className="h-11 flex-1 bg-transparent text-sm outline-none placeholder:text-primary-foreground/40" />
+                  <button type="submit" aria-label="Subscribe" className="flex size-9 items-center justify-center text-gold transition-transform hover:translate-x-1">
                     <ArrowRight className="size-5" />
                   </button>
                 </div>
@@ -124,16 +99,11 @@ export function Footer() {
 
           {columns.map((col) => (
             <div key={col.title}>
-              <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-foreground/60">
-                {col.title}
-              </h3>
+              <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-foreground/60">{col.title}</h3>
               <ul className="mt-5 space-y-3">
                 {col.links.map((link) => (
                   <li key={link.label}>
-                    <a
-                      href={link.href}
-                      className="text-sm text-primary-foreground/80 transition-colors hover:text-gold"
-                    >
+                    <a href={link.href} className="text-sm text-primary-foreground/80 transition-colors hover:text-gold">
                       {link.label}
                     </a>
                   </li>
@@ -144,17 +114,10 @@ export function Footer() {
         </div>
 
         <div className="mt-16 flex flex-col items-center justify-between gap-6 border-t border-primary-foreground/15 pt-8 sm:flex-row">
-          <p className="text-sm text-primary-foreground/50">
-            © {new Date().getFullYear()} Absolute Creation. All rights reserved.
-          </p>
+          <p className="text-sm text-primary-foreground/50">© {new Date().getFullYear()} Absolute Creation. All rights reserved.</p>
           <div className="flex items-center gap-3">
             {socials.map((s) => (
-              <a
-                key={s.label}
-                href={s.href}
-                aria-label={s.label}
-                className="flex size-10 items-center justify-center rounded-full border border-primary-foreground/20 text-primary-foreground/70 transition-colors hover:border-gold hover:bg-gold hover:text-gold-foreground"
-              >
+              <a key={s.label} href={s.href} aria-label={s.label} className="flex size-10 items-center justify-center rounded-full border border-primary-foreground/20 text-primary-foreground/70 transition-colors hover:border-gold hover:bg-gold hover:text-gold-foreground">
                 <s.icon className="size-4" />
               </a>
             ))}

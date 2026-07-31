@@ -75,13 +75,15 @@
     @apply bg-background text-foreground;
     font-feature-settings: 'ss01', 'cv01';
   }
+  ::selection {
+    @apply bg-gold/40 text-foreground;
+  }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
-  /* Hide scrollbar for marquee/logo strips */
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }

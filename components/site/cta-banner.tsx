@@ -1,6 +1,7 @@
 'use client'
 
 import { motion, useScroll, useTransform } from 'motion/react'
+import Image from 'next/image'
 import { useRef } from 'react'
 import { ArrowRight } from 'lucide-react'
 import { MagneticButton } from './magnetic-button'
@@ -14,11 +15,7 @@ export function CtaBanner() {
   return (
     <section ref={ref} className="relative overflow-hidden">
       <motion.div style={{ y }} className="absolute inset-0 scale-125">
-        <img
-          src="/images/cta.png"
-          alt="Dramatic luxury interior by Absolute Creation"
-          className="size-full object-cover"
-        />
+        <Image src="/new/11.jpeg" alt="Luxury interior and exhibition environment by Absolute Creation" fill sizes="100vw" className="object-cover" loading="lazy" />
       </motion.div>
       <div className="absolute inset-0 bg-primary/80" aria-hidden="true" />
 
@@ -37,16 +34,12 @@ export function CtaBanner() {
         </Reveal>
         <Reveal delay={0.1}>
           <p className="mt-6 max-w-xl text-pretty leading-relaxed text-primary-foreground/75 md:text-lg">
-            Whether it&apos;s a private residence or a landmark commercial space, our team is ready
-            to bring your most ambitious ideas to life.
+            Whether it&apos;s a private residence or a landmark commercial space, our team is ready to bring your most ambitious ideas to life.
           </p>
         </Reveal>
         <Reveal delay={0.15}>
           <div className="mt-10">
-            <MagneticButton href="#contact" variant="gold">
-              Start Your Project
-              <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
-            </MagneticButton>
+            <MagneticButton href="#contact" variant="gold">Start Your Project<ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" /></MagneticButton>
           </div>
         </Reveal>
       </div>

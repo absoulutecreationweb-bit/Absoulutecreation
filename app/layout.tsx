@@ -15,44 +15,43 @@ const fraunces = Fraunces({
   display: 'swap',
 })
 
-const siteUrl = 'https://absolutecreation.com'
+const siteUrl = 'https://absoulutecreation.vercel.app'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'Absolute Creation | Luxury Interior Design, Fit-Out & Construction',
+    default: 'Absolute Creation | Luxury Interiors, Exhibitions & Brand Experiences',
     template: '%s | Absolute Creation',
   },
   description:
-    'Absolute Creation is a premium design and construction company delivering world-class interior design, fit-out, architecture, renovation and turnkey solutions for high-end residential and commercial spaces.',
+    'Absolute Creation creates premium interiors, exhibitions and experiential environments with thoughtful design, precise delivery and lasting impact.',
   keywords: [
     'interior design',
+    'exhibition design',
     'fit-out solutions',
-    'architecture',
-    'construction',
-    'renovation',
-    'project management',
-    'turnkey solutions',
+    'brand experience',
+    'events activation',
     'luxury design',
+    'project management',
   ],
   authors: [{ name: 'Absolute Creation' }],
   openGraph: {
     type: 'website',
     url: siteUrl,
-    title: 'Absolute Creation | Luxury Design & Construction',
+    title: 'Absolute Creation | Luxury Interiors & Exhibitions',
     description:
-      'World-class interior design, fit-out, architecture and construction for high-end residential and commercial clients.',
+      'Premium interior, exhibition and brand experience design delivered with refined craftsmanship and precision.',
     siteName: 'Absolute Creation',
-    images: [{ url: '/images/hero.png', width: 1200, height: 630, alt: 'Absolute Creation' }],
+    images: [{ url: '/new/1.jpeg', width: 1200, height: 630, alt: 'Absolute Creation' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Absolute Creation | Luxury Design & Construction',
+    title: 'Absolute Creation | Luxury Interiors & Exhibitions',
     description:
-      'World-class interior design, fit-out, architecture and construction for high-end residential and commercial clients.',
-    images: ['/images/hero.png'],
+      'Premium interior, exhibition and brand experience design delivered with refined craftsmanship and precision.',
+    images: ['/new/1.jpeg'],
   },
-  generator: 'v0.app',
+  generator: 'next.js',
 }
 
 export const viewport: Viewport = {

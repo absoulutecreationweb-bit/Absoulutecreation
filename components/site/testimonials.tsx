@@ -1,6 +1,7 @@
 'use client'
 
 import { AnimatePresence, motion } from 'motion/react'
+import Image from 'next/image'
 import { ArrowLeft, ArrowRight, Quote } from 'lucide-react'
 import { useCallback, useEffect, useState } from 'react'
 import { SectionHeading } from './section-heading'
@@ -8,24 +9,24 @@ import { SectionHeading } from './section-heading'
 const testimonials = [
   {
     quote:
-      'Absolute Creation transformed our penthouse beyond anything we imagined. The attention to detail, the materials, the finish — every element feels intentional and utterly luxurious.',
+      'Absolute Creation brought our vision to life with remarkable clarity and discipline. The finished environment feels elevated, memorable and unmistakably aligned with our brand.',
     name: 'James Whitmore',
-    role: 'Private Client, Downtown Dubai',
-    image: '/images/client-1.png',
+    role: 'Private Client, Dubai',
+    image: '/new/12.jpeg',
   },
   {
     quote:
-      'From the first concept meeting to handover, the process was seamless. They delivered a world-class hotel fit-out on time and elevated our entire brand experience.',
+      'From the earliest concepts through installation, the team delivered with precision and confidence. Their execution elevated the entire experience for our guests.',
     name: 'Sophia Al-Rashid',
     role: 'Managing Director, Aria Hospitality',
-    image: '/images/client-2.png',
+    image: '/new/13.jpeg',
   },
   {
     quote:
-      'A rare partner that combines genuine creativity with flawless execution. Our headquarters now reflects exactly who we are. I would recommend them without hesitation.',
+      'A rare studio that blends exceptional creativity with rigorous project management. Every detail was considered and the result speaks for itself.',
     name: 'Richard Devereux',
     role: 'CEO, Vertex Group',
-    image: '/images/client-3.png',
+    image: '/new/14.jpeg',
   },
 ]
 
@@ -70,12 +71,9 @@ export function Testimonials() {
                 &ldquo;{active.quote}&rdquo;
               </p>
               <div className="mt-10 flex items-center gap-4">
-                <img
-                  src={active.image || '/placeholder.svg'}
-                  alt={active.name}
-                  className="size-14 rounded-full object-cover"
-                  loading="lazy"
-                />
+                <div className="relative size-14 overflow-hidden rounded-full">
+                  <Image src={active.image} alt={active.name} fill sizes="56px" className="object-cover" loading="lazy" />
+                </div>
                 <div className="text-left">
                   <div className="font-medium text-foreground">{active.name}</div>
                   <div className="text-sm text-muted-foreground">{active.role}</div>
