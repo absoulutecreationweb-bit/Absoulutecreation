@@ -8,6 +8,7 @@ import { ArrowRight, ArrowDown } from 'lucide-react'
 
 const easeOut = [0.22, 1, 0.36, 1] as const
 const heroSlides = ['/new/1.jpeg', '/new/2.jpeg', '/new/3.jpeg', '/new/4.jpeg', '/new/5.jpeg', '/new/6.jpeg']
+const heroHighlights = ['Luxury Interiors', 'Exhibition Systems', 'Brand Environments']
 
 export function Hero() {
   const ref = useRef<HTMLDivElement>(null)
@@ -54,70 +55,85 @@ export function Hero() {
       </div>
       <motion.div
         style={{ opacity: overlayOpacity }}
-        className="absolute inset-0 bg-[linear-gradient(90deg,rgba(8,8,8,0.8)_0%,rgba(8,8,8,0.48)_45%,rgba(8,8,8,0.72)_100%)]"
+        className="absolute inset-0 bg-[linear-gradient(120deg,rgba(6,6,6,0.82)_0%,rgba(6,6,6,0.42)_50%,rgba(6,6,6,0.74)_100%)]"
         aria-hidden="true"
       />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(201,168,106,0.16),transparent_35%)]" aria-hidden="true" />
 
       <motion.div
         style={{ y: contentY }}
-        className="relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-center px-6 lg:px-10"
+        className="relative z-10 mx-auto flex h-full max-w-7xl items-center justify-center px-6 lg:px-10"
       >
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.3, duration: 0.8, ease: easeOut }}
-          className="mb-6 flex items-center gap-3"
+          className="mb-6 inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-center backdrop-blur-md"
         >
-          <span className="h-px w-10 bg-gold" />
-          <span className="text-xs font-semibold uppercase tracking-[0.38em] text-background/90">
+          <span className="h-px w-8 bg-gold" />
+          <span className="text-[0.68rem] font-semibold uppercase tracking-[0.36em] text-zinc-100/95">
             Interior · Exhibition · Brand Experience
           </span>
         </motion.div>
 
-        <h1 className="max-w-4xl font-serif text-5xl font-light leading-[1.02] tracking-tight text-background sm:text-6xl md:text-7xl lg:text-8xl">
-          <span className="block overflow-hidden">
-            <motion.span
-              className="inline-block"
-              initial={{ y: '110%' }}
-              animate={{ y: 0 }}
-              transition={{ delay: 1.4, duration: 0.9, ease: easeOut }}
-            >
-              Driven by Vision.
-            </motion.span>
-          </span>
-          <span className="mt-2 block overflow-hidden text-gold/95 sm:mt-3">
-            <motion.span
-              className="inline-block"
-              initial={{ y: '110%' }}
-              animate={{ y: 0 }}
-              transition={{ delay: 1.55, duration: 0.9, ease: easeOut }}
-            >
-              Defined by Excellence.
-            </motion.span>
-          </span>
-        </h1>
+        <div className="max-w-5xl text-center">
+          <h1 className="font-serif text-5xl font-light leading-[0.96] tracking-[-0.02em] text-white sm:text-6xl md:text-7xl lg:text-[5.25rem]">
+            <span className="block overflow-hidden">
+              <motion.span
+                className="inline-block"
+                initial={{ y: '110%' }}
+                animate={{ y: 0 }}
+                transition={{ delay: 1.4, duration: 0.9, ease: easeOut }}
+              >
+                Crafting timeless
+              </motion.span>
+            </span>
+            <span className="mt-2 block overflow-hidden text-gold/95 sm:mt-3">
+              <motion.span
+                className="inline-block"
+                initial={{ y: '110%' }}
+                animate={{ y: 0 }}
+                transition={{ delay: 1.55, duration: 0.9, ease: easeOut }}
+              >
+                spaces with intention.
+              </motion.span>
+            </span>
+          </h1>
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.8, duration: 0.8, ease: easeOut }}
-          className="mt-8 max-w-2xl text-pretty text-base leading-relaxed text-background/85 md:text-lg"
-        >
-          Transforming ideas into exceptional interior and exhibition experiences through meticulous
-          design, refined craft and intelligent project delivery.
-        </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.8, duration: 0.8, ease: easeOut }}
+            className="mx-auto mt-7 max-w-2.5xl text-pretty text-base leading-7 text-zinc-200/90 md:text-lg"
+          >
+            We transform ideas into exceptional interiors, exhibitions and brand environments with precise design, refined craftsmanship and intelligent delivery.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.9, duration: 0.8, ease: easeOut }}
+            className="mt-8 flex flex-wrap items-center justify-center gap-3"
+          >
+            {heroHighlights.map((item) => (
+              <span key={item} className="rounded-full border border-white/15 bg-white/8 px-3.5 py-2 text-[0.72rem] font-medium uppercase tracking-[0.26em] text-zinc-100/85 backdrop-blur-sm">
+                {item}
+              </span>
+            ))}
+          </motion.div>
+        </div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.95, duration: 0.8, ease: easeOut }}
-          className="mt-10 flex flex-wrap items-center gap-4"
+          transition={{ delay: 2.0, duration: 0.8, ease: easeOut }}
+          className="mt-10 flex flex-wrap items-center justify-center gap-4"
         >
           <MagneticButton href="#projects" variant="gold">
             Discover Our Work
             <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
           </MagneticButton>
-          <MagneticButton href="#contact" variant="outline" className="border-background/40 text-background hover:border-background">
+          <MagneticButton href="#contact" variant="outline" className="border-white/25 text-white hover:border-gold hover:text-gold">
             Start a Project
           </MagneticButton>
         </motion.div>
