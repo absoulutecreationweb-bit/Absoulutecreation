@@ -4,6 +4,7 @@ import { cn } from '@/lib/utils'
 import { AnimatePresence, motion } from 'motion/react'
 import { Menu, X } from 'lucide-react'
 import { useEffect, useState } from 'react'
+import Image from 'next/image'
 
 const links = [
   { label: 'About', href: '#about' },
@@ -45,24 +46,20 @@ export function Navbar() {
         )}
       >
         <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-10">
-          <a href="#top" className="flex flex-col leading-none" aria-label="Absolute Creation home">
-            <span
-              className={cn(
-                'font-serif text-xl font-medium tracking-tight transition-colors',
-                scrolled ? 'text-foreground' : 'text-background',
-              )}
+            <a
+              href="#top"
+              className="flex items-center"
+              aria-label="Absolute Creation home"
             >
-              Absolute
-            </span>
-            <span
-              className={cn(
-                'text-[0.6rem] font-semibold uppercase tracking-[0.4em] transition-colors',
-                scrolled ? 'text-gold' : 'text-gold',
-              )}
-            >
-              Creation
-            </span>
-          </a>
+              <Image
+                src="/new/Abouslute logo newpdf.png"
+                alt="Absolute Creation"
+                width={180}
+                height={50}
+                className="h-10 w-auto object-contain"
+                priority
+              />
+            </a>
 
           <ul className="hidden items-center gap-9 lg:flex">
             {links.map((link) => (
