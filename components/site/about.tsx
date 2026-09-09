@@ -32,7 +32,7 @@ export function About() {
         <div ref={ref} className="relative order-2 h-[460px] md:h-[600px] lg:order-1">
           <motion.div
             style={{ y: y1 }}
-            className="absolute left-0 top-0 h-[70%] w-[68%] overflow-hidden rounded-[2rem]"
+            className="absolute left-0 top-0 h-[70%] w-[68%] overflow-hidden rounded-[2rem] shadow-[0_30px_70px_rgba(17,17,17,0.14)]"
           >
             <Image
               src="/new/2.jpeg"
@@ -42,10 +42,12 @@ export function About() {
               className="object-cover"
               loading="lazy"
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/15 via-transparent to-transparent" />
           </motion.div>
+
           <motion.div
             style={{ y: y2 }}
-            className="absolute bottom-0 right-0 h-[62%] w-[52%] overflow-hidden rounded-[2rem] border-8 border-background shadow-2xl shadow-black/10"
+            className="absolute bottom-0 right-0 h-[62%] w-[52%] overflow-hidden rounded-[2rem] border-8 border-background shadow-2xl shadow-black/20"
           >
             <Image
               src="/new/4.jpeg"
@@ -56,9 +58,10 @@ export function About() {
               loading="lazy"
             />
           </motion.div>
-          <div className="absolute -left-4 bottom-8 z-10 flex flex-col items-center justify-center rounded-[1.2rem] bg-gold px-7 py-6 text-gold-foreground shadow-xl">
+
+          <div className="absolute -left-4 bottom-8 z-10 flex flex-col items-center justify-center rounded-[1.25rem] border border-gold/40 bg-gold px-7 py-6 text-gold-foreground shadow-[0_20px_45px_rgba(201,168,106,0.35)]">
             <span className="font-serif text-4xl font-medium leading-none">15+</span>
-            <span className="mt-1 text-center text-[0.65rem] font-semibold uppercase tracking-[0.15em]">
+            <span className="mt-1.5 text-center text-[0.62rem] font-semibold uppercase leading-snug tracking-[0.18em]">
               Years of
               <br /> Excellence
             </span>
@@ -75,7 +78,7 @@ export function About() {
             </h2>
           </Reveal>
           <Reveal delay={0.1}>
-            <p className="mt-6 text-pretty leading-relaxed text-muted-foreground md:text-lg">
+            <p className="mt-6 max-w-xl text-pretty leading-relaxed text-muted-foreground md:text-lg">
               Absolute Creation is a premium design and production company creating immersive interiors,
               exhibition environments, retail experiences and brand-led spaces for international clients.
               We transform concepts into reality through thoughtful design, precision fabrication and
@@ -83,11 +86,12 @@ export function About() {
             </p>
           </Reveal>
 
-          <div className="mt-10 grid gap-8 sm:grid-cols-2">
+          <div className="mt-10 grid gap-5 sm:grid-cols-2">
             {pillars.map((p, i) => (
               <Reveal key={p.title} delay={0.15 + i * 0.1}>
-                <div className="rounded-[1.25rem] border border-border/70 bg-secondary/70 p-6">
-                  <h3 className="font-serif text-xl font-medium text-foreground">{p.title}</h3>
+                <div className="group h-full rounded-[1.25rem] border border-border/70 bg-secondary/70 p-6 transition-all duration-500 hover:-translate-y-1 hover:border-gold/50 hover:shadow-[0_16px_36px_rgba(17,17,17,0.08)]">
+                  <span className="block h-px w-8 bg-gold transition-all duration-500 group-hover:w-12" />
+                  <h3 className="mt-4 font-serif text-xl font-medium text-foreground">{p.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{p.body}</p>
                 </div>
               </Reveal>
@@ -95,7 +99,7 @@ export function About() {
           </div>
 
           <Reveal delay={0.35}>
-            <div className="mt-10 overflow-hidden rounded-[1.75rem] border border-border/70 bg-secondary/70 p-4 shadow-[0_18px_45px_rgba(17,17,17,0.05)]">
+            <div className="group mt-10 overflow-hidden rounded-[1.75rem] border border-border/70 bg-secondary/70 p-4 shadow-[0_18px_45px_rgba(17,17,17,0.05)]">
               <div className="relative aspect-[4/3] overflow-hidden rounded-[1.25rem]">
                 <Image
                   src="/new/7.jpeg"
@@ -103,10 +107,10 @@ export function About() {
                   fill
                   sizes="(max-width: 768px) 100vw, 40vw"
                   loading="lazy"
-                  className="object-cover"
+                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
-                <div className="absolute bottom-5 left-5 rounded-full border border-white/30 bg-white/10 px-4 py-2 text-[0.65rem] font-semibold uppercase tracking-[0.25em] text-white backdrop-blur-sm">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent" />
+                <div className="absolute bottom-5 left-5 rounded-full border border-white/25 bg-white/10 px-4 py-2 text-[0.65rem] font-semibold uppercase tracking-[0.25em] text-white backdrop-blur-sm">
                   Featured Project
                 </div>
               </div>

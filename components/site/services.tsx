@@ -45,22 +45,41 @@ export function Services() {
         </div>
 
         <StaggerGroup className="mt-16 grid gap-6 lg:grid-cols-2">
-          {services.map((s) => (
+          {services.map((s, i) => (
             <StaggerItem key={s.title}>
-              <article className="group relative flex h-full flex-col justify-between gap-10 overflow-hidden rounded-[1.75rem] border border-border/70 bg-background/85 p-8 backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 hover:border-gold/50 hover:shadow-[0_20px_60px_rgba(17,17,17,0.08)] md:p-10">
-                <div className="absolute inset-0">
-                  <Image src={s.image} alt={s.title} fill sizes="(max-width: 768px) 100vw, 50vw" loading="lazy" className="object-cover opacity-0 transition duration-700 group-hover:opacity-20" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/70 to-background/40" />
+              <article className="group relative flex h-full flex-col justify-between gap-12 overflow-hidden rounded-[1.75rem] border border-border/70 bg-background/90 p-8 shadow-[0_10px_30px_rgba(17,17,17,0.04)] backdrop-blur-sm transition-all duration-500 hover:-translate-y-1.5 hover:border-gold/50 hover:shadow-[0_24px_60px_rgba(17,17,17,0.1)] md:p-10">
+                {/* Background photograph — muted brightness/saturation so it
+                    stays a subtle backdrop rather than competing with the
+                    text and icon on hover. */}
+                <div className="absolute inset-0" aria-hidden="true">
+                  <Image
+                    src={s.image}
+                    alt=""
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    loading="lazy"
+                    className="object-cover opacity-0 [filter:brightness(0.75)_saturate(0.85)] transition-all duration-700 ease-out group-hover:scale-[1.05] group-hover:opacity-25"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background via-background/85 to-background/50" />
                 </div>
+
                 <div className="relative z-10 flex items-start justify-between">
-                  <span className="flex size-14 items-center justify-center rounded-[1rem] bg-secondary text-foreground transition-colors duration-500 group-hover:bg-gold group-hover:text-gold-foreground">
+                  <span className="flex size-14 items-center justify-center rounded-[1rem] bg-secondary text-foreground shadow-[0_6px_16px_rgba(17,17,17,0.05)] transition-colors duration-500 group-hover:bg-gold group-hover:text-gold-foreground">
                     <s.icon className="size-6" strokeWidth={1.5} />
                   </span>
-                  <ArrowUpRight className="size-6 text-muted-foreground opacity-0 transition-all duration-500 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:opacity-100" />
+                  <div className="flex items-center gap-3">
+                    <span className="font-serif text-sm text-muted-foreground/70">
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
+                    <ArrowUpRight className="size-6 text-muted-foreground opacity-0 transition-all duration-500 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-gold group-hover:opacity-100" />
+                  </div>
                 </div>
+
                 <div className="relative z-10">
-                  <h3 className="font-serif text-2xl font-medium text-foreground">{s.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
+                  <h3 className="font-serif text-2xl font-medium tracking-tight text-foreground">
+                    {s.title}
+                  </h3>
+                  <p className="mt-3 max-w-md text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
                 </div>
               </article>
             </StaggerItem>

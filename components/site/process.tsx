@@ -41,22 +41,28 @@ export function Process() {
           description="A refined, transparent methodology that removes friction and delivers certainty at every stage."
         />
 
-        <div className="relative mt-16">
+        <div className="relative mt-20">
+          {/* Connecting line sits exactly through the centre of each
+              64px (size-16) circle, so it reads as one continuous
+              timeline instead of a line floating above the numbers. */}
           <div
-            className="absolute left-0 right-0 top-8 hidden h-px bg-border lg:block"
+            className="absolute left-[6.5%] right-[6.5%] top-8 hidden h-px bg-gradient-to-r from-border via-gold/40 to-border lg:block"
             aria-hidden="true"
           />
-          <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-5 lg:gap-6">
+
+          <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-5 lg:gap-6">
             {steps.map((step, i) => (
               <Reveal key={step.number} delay={i * 0.1}>
-                <div className="relative">
-                  <div className="mb-6 flex items-center gap-4 lg:block">
-                    <span className="relative z-10 flex size-16 items-center justify-center rounded-full border border-border bg-background font-serif text-lg font-medium text-gold">
-                      {step.number}
-                    </span>
+                <div className="group relative flex flex-col items-start text-left">
+                  <div className="relative z-10 mb-6 flex size-16 shrink-0 items-center justify-center rounded-full border border-border bg-background font-serif text-lg font-medium text-gold shadow-[0_10px_24px_rgba(17,17,17,0.06)] transition-all duration-500 group-hover:-translate-y-1 group-hover:border-gold group-hover:shadow-[0_16px_32px_rgba(201,168,106,0.25)]">
+                    {step.number}
                   </div>
-                  <h3 className="font-serif text-xl font-medium">{step.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{step.desc}</p>
+                  <h3 className="font-serif text-xl font-medium tracking-tight text-foreground">
+                    {step.title}
+                  </h3>
+                  <p className="mt-2.5 max-w-[22ch] text-sm leading-relaxed text-muted-foreground">
+                    {step.desc}
+                  </p>
                 </div>
               </Reveal>
             ))}

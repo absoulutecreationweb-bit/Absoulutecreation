@@ -1,17 +1,18 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
-import { Manrope, Fraunces } from 'next/font/google'
+import { DM_Sans, DM_Serif_Display } from 'next/font/google'
 import './globals.css'
 
-const manrope = Manrope({
+const dmSans = DM_Sans({
   subsets: ['latin'],
-  variable: '--font-manrope',
+  variable: '--font-dm-sans',
   display: 'swap',
 })
 
-const fraunces = Fraunces({
+const dmSerifDisplay = DM_Serif_Display({
   subsets: ['latin'],
-  variable: '--font-fraunces',
+  weight: '400',
+  variable: '--font-dm-serif-display',
   display: 'swap',
 })
 
@@ -87,7 +88,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`bg-background ${manrope.variable} ${fraunces.variable}`}>
+    <html lang="en" className={`bg-background ${dmSans.variable} ${dmSerifDisplay.variable}`}>
       <body className="font-sans antialiased">
         <script
           type="application/ld+json"
