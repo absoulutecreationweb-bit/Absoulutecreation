@@ -41,8 +41,8 @@ export function Navbar() {
         className={cn(
           'fixed inset-x-0 top-0 z-50 transition-all duration-500',
           scrolled
-            ? 'border-b border-border/60 bg-background/80 backdrop-blur-xl'
-            : 'border-b border-transparent bg-transparent',
+            ? 'border-b border-border/60 bg-background/95 backdrop-blur-xl'
+            : 'border-b border-border/60 bg-background',
         )}
       >
         <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-10">
@@ -68,9 +68,7 @@ export function Navbar() {
                   href={link.href}
                   className={cn(
                     'group relative text-sm font-medium tracking-wide transition-colors',
-                    scrolled
-                      ? 'text-muted-foreground hover:text-foreground'
-                      : 'text-background/80 hover:text-background',
+                    'text-muted-foreground hover:text-foreground',
                   )}
                 >
                   {link.label}
@@ -84,9 +82,7 @@ export function Navbar() {
             href="#contact"
             className={cn(
               'hidden rounded-full px-6 py-3 text-sm font-medium transition-all duration-300 lg:inline-flex',
-              scrolled
-                ? 'bg-primary text-primary-foreground hover:bg-gold hover:text-gold-foreground'
-                : 'bg-background text-foreground hover:bg-gold hover:text-gold-foreground',
+              'bg-primary text-primary-foreground hover:bg-gold hover:text-gold-foreground',
             )}
           >
             Start a Project
@@ -98,7 +94,7 @@ export function Navbar() {
             aria-label="Open menu"
             className={cn(
               'inline-flex size-11 items-center justify-center rounded-full transition-colors lg:hidden',
-              scrolled ? 'text-foreground' : 'text-background',
+              'text-foreground',
             )}
           >
             <Menu className="size-6" />

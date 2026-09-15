@@ -1,6 +1,7 @@
 'use client'
 
-import { ArrowRight } from 'lucide-react'
+import { Mail, MapPin, Phone, Send } from 'lucide-react'
+import Image from 'next/image'
 import { useState, type SVGProps } from 'react'
 
 function InstagramIcon(props: SVGProps<SVGSVGElement>) {
@@ -31,38 +32,19 @@ function FacebookIcon(props: SVGProps<SVGSVGElement>) {
   )
 }
 
-const columns = [
-  {
-    title: 'Company',
-    links: [
-      { label: 'About Us', href: '#about' },
-      { label: 'Our Process', href: '#process' },
-      { label: 'Contact', href: '#contact' },
-    ],
-  },
-  {
-    title: 'Services',
-    links: [
-      { label: 'Exhibition & Kiosks', href: '#services' },
-      { label: 'Interior & Fit-Out', href: '#services' },
-      { label: 'Sculpture & Theming', href: '#services' },
-      { label: 'Events & Activations', href: '#services' },
-    ],
-  },
-  {
-    title: 'Projects',
-    links: [
-      { label: 'Portfolio', href: '#projects' },
-      { label: 'Client Collaborations', href: '#brands' },
-      { label: 'Contact', href: '#contact' },
-    ],
-  },
-]
+function YoutubeIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
+      <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8ZM9.6 16.1V7.9l6.5 4.1-6.5 4.1Z" />
+    </svg>
+  )
+}
 
 const socials = [
+  { icon: FacebookIcon, label: 'Facebook', href: '#' },
   { icon: InstagramIcon, label: 'Instagram', href: '#' },
   { icon: LinkedinIcon, label: 'LinkedIn', href: '#' },
-  { icon: FacebookIcon, label: 'Facebook', href: '#' },
+  { icon: YoutubeIcon, label: 'YouTube', href: '#' },
 ]
 
 export function Footer() {
@@ -70,58 +52,68 @@ export function Footer() {
   const [subscribed, setSubscribed] = useState(false)
 
   return (
-    <footer className="bg-primary text-primary-foreground">
-      <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10">
-        <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
+    <footer className="border-t border-border bg-secondary text-foreground">
+      <div className="mx-auto max-w-7xl px-6 py-14 lg:px-10 lg:py-16">
+        <div className="grid gap-12 lg:grid-cols-[1.15fr_0.75fr_1.45fr_1.2fr] lg:gap-10">
           <div className="max-w-sm">
-            <a href="#top" className="flex flex-col leading-none" aria-label="Absolute Creation">
-              <span className="font-serif text-2xl font-medium tracking-tight">Absolute</span>
-              <span className="text-[0.65rem] font-semibold uppercase tracking-[0.4em] text-gold">Creation</span>
+            <a href="#top" aria-label="Absolute Creation">
+              <Image src="/new/Abouslute logo newpdf.png" alt="Absolute Creation" width={220} height={70} className="h-auto w-52 object-contain object-left" />
             </a>
-            <p className="mt-6 text-sm leading-relaxed text-primary-foreground/60">
-              Absolute Creation shapes immersive interiors and exhibitions that balance artistic vision with disciplined execution.
+            <p className="mt-8 max-w-xs text-sm leading-relaxed text-muted-foreground">
+              Premium retail fit-outs and theming solutions for Dubai and beyond.
             </p>
+          </div>
 
-            <form onSubmit={(e) => { e.preventDefault(); setSubscribed(true) }} className="mt-8">
-              <label htmlFor="newsletter" className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-foreground/60">Newsletter</label>
+          <div>
+            <h3 className="font-serif text-xl">Links</h3>
+            <ul className="mt-6 space-y-3 text-sm text-muted-foreground">
+              {[
+                ['Home', '#top'],
+                ['About Us', '#about'],
+                ['Services', '#services'],
+                ['Interior Fit-Outs', '#services'],
+                ['Theming Solutions', '#services'],
+                ['Contact us', '#contact'],
+              ].map(([label, href]) => (
+                <li key={label}><a href={href} className="transition-colors hover:text-foreground">{label}</a></li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="font-serif text-xl">Contact Us</h3>
+            <div className="mt-6 space-y-4 text-sm text-muted-foreground">
+              <a href="tel:+971543098590" className="flex items-center gap-3 hover:text-foreground"><Phone className="size-4 shrink-0" />+971 54 309 8590</a>
+              <a href="tel:+97143519275" className="flex items-center gap-3 hover:text-foreground"><Phone className="size-4 shrink-0" />+971 4 351 9275</a>
+              <a href="mailto:info@naamcreations.com" className="flex items-center gap-3 hover:text-foreground"><Mail className="size-4 shrink-0" />info@naamcreations.com</a>
+              <p className="flex items-start gap-3 leading-relaxed"><MapPin className="mt-0.5 size-4 shrink-0" />Behind Times square - 4 B ST - Al Quoz Industrial Area 1 - Dubai, UAE</p>
+            </div>
+          </div>
+
+          <div className="max-w-md">
+            <h3 className="font-serif text-xl">Subscribe our Newsletter</h3>
+            <form onSubmit={(e) => { e.preventDefault(); setSubscribed(true) }} className="mt-6">
               {subscribed ? (
-                <p className="mt-3 text-sm text-gold">Thank you for subscribing.</p>
+                <p className="text-sm text-gold">Thank you for subscribing.</p>
               ) : (
-                <div className="mt-3 flex items-center border-b border-primary-foreground/25 focus-within:border-gold">
-                  <input id="newsletter" type="email" required value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Your email address" className="h-11 flex-1 bg-transparent text-sm outline-none placeholder:text-primary-foreground/40" />
-                  <button type="submit" aria-label="Subscribe" className="flex size-9 items-center justify-center text-gold transition-transform hover:translate-x-1">
-                    <ArrowRight className="size-5" />
-                  </button>
+                <div className="flex flex-col gap-3 sm:flex-row">
+                  <input id="newsletter" type="email" required value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" className="h-11 min-w-0 flex-1 border border-input bg-background px-3 text-sm outline-none placeholder:text-muted-foreground focus:border-foreground" />
+                  <button type="submit" className="inline-flex h-11 items-center justify-center gap-2 bg-gold px-7 text-sm font-medium text-gold-foreground transition-colors hover:bg-primary hover:text-primary-foreground"><Send className="size-4" />Submit</button>
                 </div>
               )}
             </form>
-          </div>
-
-          {columns.map((col) => (
-            <div key={col.title}>
-              <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-foreground/60">{col.title}</h3>
-              <ul className="mt-5 space-y-3">
-                {col.links.map((link) => (
-                  <li key={link.label}>
-                    <a href={link.href} className="text-sm text-primary-foreground/80 transition-colors hover:text-gold">
-                      {link.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
+            <h3 className="mt-7 font-serif text-xl">Follow Us</h3>
+            <div className="mt-5 flex items-center gap-5">
+              {socials.map((s) => (
+                <a key={s.label} href={s.href} aria-label={s.label} className="text-foreground transition-colors hover:text-gold"><s.icon className="size-5" /></a>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
 
-        <div className="mt-16 flex flex-col items-center justify-between gap-6 border-t border-primary-foreground/15 pt-8 sm:flex-row">
-          <p className="text-sm text-primary-foreground/50">© {new Date().getFullYear()} Absolute Creation. All rights reserved.</p>
-          <div className="flex items-center gap-3">
-            {socials.map((s) => (
-              <a key={s.label} href={s.href} aria-label={s.label} className="flex size-10 items-center justify-center rounded-full border border-primary-foreground/20 text-primary-foreground/70 transition-colors hover:border-gold hover:bg-gold hover:text-gold-foreground">
-                <s.icon className="size-4" />
-              </a>
-            ))}
-          </div>
+        <div className="mt-14 flex flex-col gap-4 border-t border-border pt-7 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
+          <p>© {new Date().getFullYear()} Absolute Creation. All rights reserved.</p>
+          <div className="flex gap-6"><a href="#" className="hover:text-foreground">Privacy Policy</a><a href="#" className="hover:text-foreground">Terms of Service</a></div>
         </div>
       </div>
     </footer>
