@@ -1,18 +1,10 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
-import { DM_Sans, DM_Serif_Display } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import './globals.css'
 
-const dmSans = DM_Sans({
+const inter = Inter({
   subsets: ['latin'],
-  variable: '--font-dm-sans',
-  display: 'swap',
-})
-
-const dmSerifDisplay = DM_Serif_Display({
-  subsets: ['latin'],
-  weight: '400',
-  variable: '--font-dm-serif-display',
   display: 'swap',
 })
 
@@ -76,7 +68,7 @@ const jsonLd = {
   },
   contactPoint: {
     '@type': 'ContactPoint',
-    telephone: '+971-4-000-0000',
+    telephone: '+971581750224',
     contactType: 'customer service',
     email: 'hello@absolutecreation.com',
   },
@@ -88,7 +80,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`bg-background ${dmSans.variable} ${dmSerifDisplay.variable}`}>
+    <html lang="en" className={`bg-background ${inter.className}`}>
       <body className="font-sans antialiased">
         <script
           type="application/ld+json"

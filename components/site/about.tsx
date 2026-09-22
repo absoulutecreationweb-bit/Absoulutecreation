@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform } from 'motion/react'
 import Image from 'next/image'
+import { ArrowUpRight } from 'lucide-react'
 import { useRef } from 'react'
 import { Reveal } from './reveal'
 import { Eyebrow } from './section-heading'
@@ -115,6 +116,17 @@ export function About() {
                 </div>
               </div>
             </div>
+          </Reveal>
+          <Reveal delay={0.4}>
+            <a
+              href="/about"
+              className="group mt-7 inline-flex items-center gap-2 text-sm font-medium text-foreground"
+            >
+              Read more about us
+              <span className="flex size-9 items-center justify-center rounded-full border border-border transition-colors duration-300 group-hover:border-gold group-hover:bg-gold group-hover:text-black">
+                <ArrowUpRight className="size-4" />
+              </span>
+            </a>
           </Reveal>
         </div>
       </div>

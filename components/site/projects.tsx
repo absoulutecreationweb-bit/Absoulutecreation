@@ -122,7 +122,7 @@ export function Projects() {
         <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-end">
           <SectionHeading eyebrow="Portfolio" title="A refined body of work across interiors and experiences." />
           <a
-            href="#contact"
+            href="/contact"
             className="group inline-flex shrink-0 items-center gap-2 text-sm font-medium text-foreground"
           >
             Discuss a project

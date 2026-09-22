@@ -6,7 +6,7 @@ import { Reveal } from './reveal'
 import { Eyebrow } from './section-heading'
 
 const details = [
-  { icon: Phone, label: 'Phone', value: '+971 4 000 0000', href: 'tel:+97140000000' },
+  { icon: Phone, label: 'Phone', value: '+971 58 175 0224', href: 'tel:+971581750224' },
   { icon: Mail, label: 'Email', value: 'hello@absolutecreation.com', href: 'mailto:hello@absolutecreation.com' },
   { icon: MapPin, label: 'Office', value: 'Dubai, United Arab Emirates' },
   { icon: Clock, label: 'Hours', value: 'Sun – Thu · 9:00 AM – 6:00 PM' },
@@ -89,7 +89,7 @@ export function Contact() {
                     <Field label="Email" name="email" type="email" placeholder="you@email.com" />
                   </div>
                   <div className="grid gap-5 sm:grid-cols-2">
-                    <Field label="Phone" name="phone" placeholder="+971 ..." required={false} />
+                    <Field label="Phone" name="phone" placeholder="+971 58 175 0224" required={false} />
                     <div className="flex flex-col gap-2">
                       <label htmlFor="service" className="text-sm font-medium text-foreground">Service</label>
                       <select id="service" name="service" className="h-12 rounded-full border border-border bg-background px-4 text-sm outline-none transition-colors focus:border-gold">

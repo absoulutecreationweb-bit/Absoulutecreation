@@ -2,6 +2,7 @@
 
 import { SectionHeading } from './section-heading'
 import { Reveal } from './reveal'
+import { ArrowUpRight } from 'lucide-react'
 
 const steps = [
   {
@@ -40,6 +41,16 @@ export function Process() {
           title="Five deliberate steps to extraordinary."
           description="A refined, transparent methodology that removes friction and delivers certainty at every stage."
         />
+
+        <a
+          href="/process"
+          className="group mt-7 inline-flex items-center gap-2 text-sm font-medium text-foreground"
+        >
+          See how we work
+          <span className="flex size-9 items-center justify-center rounded-full border border-border transition-colors duration-300 group-hover:border-gold group-hover:bg-gold group-hover:text-black">
+            <ArrowUpRight className="size-4" />
+          </span>
+        </a>
 
         <div className="relative mt-20">
           {/* Connecting line sits exactly through the centre of each

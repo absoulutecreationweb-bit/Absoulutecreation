@@ -1,4 +1,3 @@
-import { Navbar } from '@/components/site/navbar'
 import { Hero } from '@/components/site/hero'
 import { About } from '@/components/site/about'
 import { Services } from '@/components/site/services'
@@ -12,32 +11,24 @@ import { Brands } from '@/components/site/brands'
 import { Faq } from '@/components/site/faq'
 import { CtaBanner } from '@/components/site/cta-banner'
 import { Contact } from '@/components/site/contact'
-import { Footer } from '@/components/site/footer'
-import { ScrollProgress, FloatingButtons, Preloader } from '@/components/site/site-chrome'
+import { PageFrame } from '@/components/site/page-frame'
 
 export default function Page() {
   return (
-    <>
-      <Preloader />
-      <ScrollProgress />
-      <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <Services />
-        <CoreValues />
-        <Projects />
-        <WhyChooseUs />
-        <Stats />
-        <Testimonials />
-        <Process />
-        <Brands />
-        <Faq />
-        <CtaBanner />
-        <Contact />
-      </main>
-      <Footer />
-      <FloatingButtons />
-    </>
+    <PageFrame>
+      <Hero />
+      <About />
+      <Services />
+      <CoreValues />
+      <Projects />
+      <WhyChooseUs />
+      <Stats />
+      <Testimonials />
+      <Process />
+      <Brands />
+      <Faq />
+      <CtaBanner />
+      <Contact />
+    </PageFrame>
   )
 }

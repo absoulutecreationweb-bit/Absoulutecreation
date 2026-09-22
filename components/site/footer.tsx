@@ -56,7 +56,7 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-14 lg:px-10 lg:py-16">
         <div className="grid gap-12 lg:grid-cols-[1.15fr_0.75fr_1.45fr_1.2fr] lg:gap-10">
           <div className="max-w-sm">
-            <a href="#top" aria-label="Absolute Creation">
+            <a href="/" aria-label="Absolute Creation">
               <Image src="/new/Abouslute logo newpdf.png" alt="Absolute Creation" width={220} height={70} className="h-auto w-52 object-contain object-left" />
             </a>
             <p className="mt-8 max-w-xs text-sm leading-relaxed text-muted-foreground">
@@ -68,12 +68,12 @@ export function Footer() {
             <h3 className="font-serif text-xl">Links</h3>
             <ul className="mt-6 space-y-3 text-sm text-muted-foreground">
               {[
-                ['Home', '#top'],
-                ['About Us', '#about'],
-                ['Services', '#services'],
-                ['Interior Fit-Outs', '#services'],
-                ['Theming Solutions', '#services'],
-                ['Contact us', '#contact'],
+                ['Home', '/'],
+                ['About Us', '/about'],
+                ['Services', '/services'],
+                ['Interior Fit-Outs', '/services'],
+                ['Theming Solutions', '/services'],
+                ['Contact us', '/contact'],
               ].map(([label, href]) => (
                 <li key={label}><a href={href} className="transition-colors hover:text-foreground">{label}</a></li>
               ))}
@@ -83,8 +83,8 @@ export function Footer() {
           <div>
             <h3 className="font-serif text-xl">Contact Us</h3>
             <div className="mt-6 space-y-4 text-sm text-muted-foreground">
-              <a href="tel:+971543098590" className="flex items-center gap-3 hover:text-foreground"><Phone className="size-4 shrink-0" />+971 54 309 8590</a>
-              <a href="tel:+97143519275" className="flex items-center gap-3 hover:text-foreground"><Phone className="size-4 shrink-0" />+971 4 351 9275</a>
+              <a href="tel:+971581750224" className="flex items-center gap-3 hover:text-foreground"><Phone className="size-4 shrink-0" />+971 58 175 0224</a>
+              <a href="tel:+971581750224" className="flex items-center gap-3 hover:text-foreground"><Phone className="size-4 shrink-0" />+971 58 175 0224</a>
               <a href="mailto:info@naamcreations.com" className="flex items-center gap-3 hover:text-foreground"><Mail className="size-4 shrink-0" />info@naamcreations.com</a>
               <p className="flex items-start gap-3 leading-relaxed"><MapPin className="mt-0.5 size-4 shrink-0" />Behind Times square - 4 B ST - Al Quoz Industrial Area 1 - Dubai, UAE</p>
             </div>

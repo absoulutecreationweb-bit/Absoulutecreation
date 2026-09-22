@@ -7,11 +7,11 @@ import { useEffect, useState } from 'react'
 import Image from 'next/image'
 
 const links = [
-  { label: 'About', href: '#about' },
-  { label: 'Services', href: '#services' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Process', href: '#process' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'About', href: '/about' },
+  { label: 'Services', href: '/services' },
+  { label: 'Projects', href: '/projects' },
+  { label: 'Process', href: '/process' },
+  { label: 'Contact', href: '/contact' },
 ]
 
 export function Navbar() {
@@ -47,7 +47,7 @@ export function Navbar() {
       >
         <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-10">
             <a
-              href="#top"
+              href="/"
               className="flex items-center"
               aria-label="Absolute Creation home"
             >
@@ -79,7 +79,7 @@ export function Navbar() {
           </ul>
 
           <a
-            href="#contact"
+            href="/contact"
             className={cn(
               'hidden rounded-full px-6 py-3 text-sm font-medium transition-all duration-300 lg:inline-flex',
               'bg-primary text-primary-foreground hover:bg-gold hover:text-gold-foreground',
@@ -136,7 +136,7 @@ export function Navbar() {
                 </motion.a>
               ))}
               <a
-                href="#contact"
+                href="/contact"
                 onClick={() => setOpen(false)}
                 className="mt-8 inline-flex items-center justify-center rounded-full bg-gold px-6 py-4 text-sm font-medium text-gold-foreground"
               >

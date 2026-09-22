@@ -39,7 +39,7 @@ export function CtaBanner() {
         </Reveal>
         <Reveal delay={0.15}>
           <div className="mt-10">
-            <MagneticButton href="#contact" variant="gold">Start Your Project<ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" /></MagneticButton>
+            <MagneticButton href="/contact" variant="gold">Start Your Project<ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" /></MagneticButton>
           </div>
         </Reveal>
       </div>

@@ -44,6 +44,16 @@ export function Services() {
           </p>
         </div>
 
+        <a
+          href="/services"
+          className="group mt-7 inline-flex items-center gap-2 text-sm font-medium text-foreground"
+        >
+          Explore our services
+          <span className="flex size-9 items-center justify-center rounded-full border border-border transition-colors duration-300 group-hover:border-gold group-hover:bg-gold group-hover:text-black">
+            <ArrowUpRight className="size-4" />
+          </span>
+        </a>
+
         <StaggerGroup className="mt-16 grid gap-6 lg:grid-cols-2">
           {services.map((s, i) => (
             <StaggerItem key={s.title}>

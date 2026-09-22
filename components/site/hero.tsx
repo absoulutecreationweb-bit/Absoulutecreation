@@ -156,12 +156,12 @@ export function Hero() {
           transition={{ delay: 2.0, duration: 0.8, ease: easeOut }}
           className="mt-10 flex flex-wrap items-center justify-center gap-4"
         >
-          <MagneticButton href="#projects" variant="gold">
+          <MagneticButton href="/projects" variant="gold">
             Discover Our Work
             <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
           </MagneticButton>
           <MagneticButton
-            href="#contact"
+            href="/contact"
             variant="outline"
             className="border-white/25 text-white hover:border-gold hover:text-gold"
           >
@@ -182,7 +182,7 @@ export function Hero() {
       </div>
 
       <motion.a
-        href="#about"
+        href="/about"
         aria-label="Scroll to explore"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
