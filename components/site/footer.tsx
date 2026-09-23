@@ -85,7 +85,7 @@ export function Footer() {
             <div className="mt-6 space-y-4 text-sm text-muted-foreground">
               <a href="tel:+971581750224" className="flex items-center gap-3 hover:text-foreground"><Phone className="size-4 shrink-0" />+971 58 175 0224</a>
               <a href="tel:+971581750224" className="flex items-center gap-3 hover:text-foreground"><Phone className="size-4 shrink-0" />+971 58 175 0224</a>
-              <a href="mailto:info@naamcreations.com" className="flex items-center gap-3 hover:text-foreground"><Mail className="size-4 shrink-0" />info@naamcreations.com</a>
+              <a href="mailto:info@naamcreations.com" className="flex items-center gap-3 hover:text-foreground"><Mail className="size-4 shrink-0" />accounts@theabsolutecreation.com</a>
               <p className="flex items-start gap-3 leading-relaxed"><MapPin className="mt-0.5 size-4 shrink-0" />Behind Times square - 4 B ST - Al Quoz Industrial Area 1 - Dubai, UAE</p>
             </div>
           </div>
